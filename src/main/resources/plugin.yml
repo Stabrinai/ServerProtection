@@ -1,4 +1,4 @@
 name: ServerProtection
 version: '${project.version}'
-main: wushan.serverprotection.ServerProtection
+main: sattera.serverprotection.ServerProtection
 api-version: 1.13
