@@ -1,4 +1,0 @@
-name: ServerProtection
-version: '1.0'
-main: wushan.serverprotection.ServerProtection
-api-version: 1.13
