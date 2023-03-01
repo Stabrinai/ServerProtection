@@ -1,0 +1,4 @@
+name: ServerProtection
+version: '${project.version}'
+main: wushan.serverprotection.ServerProtection
+api-version: 1.13
