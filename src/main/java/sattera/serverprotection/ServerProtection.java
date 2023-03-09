@@ -17,13 +17,17 @@ public class ServerProtection extends JavaPlugin implements Listener, ServerBran
 
   public void onEnable() {
     plugin = this;
-//    Bukkit.getPluginManager().registerEvents(this, (Plugin)this);
-//    getServer().getPluginManager().registerEvents(new PlayerListener(), (Plugin)this);
+    Bukkit.getPluginManager().registerEvents(this, this);
+    Bukkit.getPluginManager().registerEvents(new Handler(this), this);
+
   }
 
   public void onDisable() {
     HandlerList.unregisterAll((Plugin)this);
-//    getServer().getScheduler().cancelTasks((Plugin)this);
+    getServer().getScheduler().cancelTasks(this);
+    for (Player player : Bukkit.getOnlinePlayers()) {
+      HideManager.inst.showAll(player);
+    }
   }
 
   @EventHandler(priority = EventPriority.HIGHEST)
