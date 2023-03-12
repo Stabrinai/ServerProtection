@@ -1,4 +1,4 @@
-package sattera.serverprotection;
+package sattera.iriscraft;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -17,7 +17,7 @@ public class PacketSerializer {
   
   private void writeString(String s, ByteBuf buf) {
     if (s.length() > 32767)
-      throw new IllegalArgumentException(String.format("Cannot send string longer than Short.MAX_VALUE (got %s characters)", new Object[] { Integer.valueOf(s.length()) })); 
+      throw new IllegalArgumentException(String.format("Cannot send string longer than Short.MAX_VALUE (got %s characters)", s.length()));
     byte[] b = s.getBytes(StandardCharsets.UTF_8);
     writeVarInt(b.length, buf);
     buf.writeBytes(b);

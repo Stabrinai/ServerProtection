@@ -1,4 +1,4 @@
-package sattera.serverprotection;
+package sattera.iriscraft;
 
 import java.util.UUID;
 import org.bukkit.Bukkit;
@@ -12,14 +12,14 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class ServerProtection extends JavaPlugin implements Listener, ServerBrand {
-  private static ServerProtection plugin;
+public class IrisCraft extends JavaPlugin implements Listener, ServerBrand {
+  private static IrisCraft plugin;
 
   public void onEnable() {
     plugin = this;
     Bukkit.getPluginManager().registerEvents(this, this);
+    getCommand("hidenick").setExecutor(new HideExecutor(this));
     Bukkit.getPluginManager().registerEvents(new Handler(this), this);
-
   }
 
   public void onDisable() {

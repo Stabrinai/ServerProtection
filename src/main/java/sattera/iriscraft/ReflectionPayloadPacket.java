@@ -1,4 +1,4 @@
-package sattera.serverprotection;
+package sattera.iriscraft;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -9,9 +9,9 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.messaging.Messenger;
 
 public class ReflectionPayloadPacket {
-  private final ServerProtection plugin;
+  private final IrisCraft plugin;
   
-  public ReflectionPayloadPacket(ServerProtection plugin) {
+  public ReflectionPayloadPacket(IrisCraft plugin) {
     this.plugin = plugin;
     Messenger messenger = Bukkit.getMessenger();
     try {
@@ -36,7 +36,7 @@ public class ReflectionPayloadPacket {
       playerChannels.setAccessible(true);
       Set<String> channels = (Set<String>)playerChannels.get(player);
       if (!channels.contains("minecraft:brand"))
-        channels.add("minecraft:brand"); 
+        channels.add("minecraft:brand");
     } catch (Exception ignored) {}
   }
 }

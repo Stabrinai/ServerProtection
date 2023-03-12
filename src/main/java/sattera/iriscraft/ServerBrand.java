@@ -1,4 +1,4 @@
-package sattera.serverprotection;
+package sattera.iriscraft;
 
 import java.util.UUID;
 

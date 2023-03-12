@@ -1,4 +1,7 @@
-name: ServerProtection
+name: IrisCraft
 version: '${project.version}'
-main: sattera.serverprotection.ServerProtection
+main: sattera.iriscraft.IrisCraft
 api-version: 1.13
+commands:
+  hidenick:
+    description: "Main hide command"
